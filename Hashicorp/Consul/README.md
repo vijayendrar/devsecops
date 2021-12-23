@@ -15,7 +15,6 @@
   --- 
 
 
-
 <h4>step-3 restart the consul service one by one in server and client</h4>
   ---
    systemctl restart consul
