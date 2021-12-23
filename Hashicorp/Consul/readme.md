@@ -1,3 +1,3 @@
-<a href="https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip.htm">
+<a href="https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/index.htm">
 <title="gossip encryption configuration in consul server">  
 </a>
