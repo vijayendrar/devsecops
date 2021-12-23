@@ -16,7 +16,7 @@
   
     systemctl restart consul   
   
-<h4>step-4 change 'encrypt_verify_outgoing : true' then restart the consul service in client and server machine </h4> 
+<h4>step-4 change 'encrypt_verify_outgoing:true' then restart the consul service in client and server machine </h4> 
   
     "encrypt": "YlBnnO3y6gd5PKnBEmtTtzL9lobj3yeW8N060wrVvt0=",
     "encrypt_verify_incoming": false, 
