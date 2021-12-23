@@ -35,3 +35,12 @@
 <h4>step-7  Restart the consul service in client and server</h4> 
  
     systemctl restart consul
+
+
+
+<h4>consul-server-01 configuration</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/consul-server-01.png)
+
+
+
