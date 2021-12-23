@@ -1,2 +1,3 @@
-<frame name="pageindex" src="gossip\pg_index.htm"/>
-<frame name="contents" src="gossip\pg_0001.htm"/>
+<title="gossip encryption configuration in consul server" >
+<a href="https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip.htm">
+</a>
