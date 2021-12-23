@@ -1,11 +1,11 @@
 <h3>GOSSIP Encryption configuration Procedure in the Consul Server</h3> 
 
 <h4>Step-1 Configure below mention paramter in  both server </h4> 
----  
+...
     "encrypt": "YlBnnO3y6gd5PKnBEmtTtzL9lobj3yeW8N060wrVvt0=",
     "encrypt_verify_incoming": false,
     "encrypt_verify_outgoing": false
----
+...
 
 <h4>Step-2 configure the consul-client-01 and consul-client-02 </h4>
   ---  
