@@ -44,3 +44,68 @@
 
 
 
+<h4>consul-server-02 configuration</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/consul-server-02.png)
+
+
+
+
+<h4>consul-client-01 configuration</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/consul-client-01.png)
+
+
+
+
+<h4>consul-client-02 configuration</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/consul-client-02.png)
+
+
+
+
+<h4>consul key-ring list</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/consul%20keyring.png)
+
+
+<h4>rotate the encryption key</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/rotate.png)
+
+
+
+<h4>Rotate and install the new key </h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/new%20kwy.png)
+
+
+
+
+<h4>remove the old key to list the new keys</h4> 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Consul/gossip/remove%20the%20keys.png)
+
+
+
+
+
+<h2> after the installation restart the consul service in each node </h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
