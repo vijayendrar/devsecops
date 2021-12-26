@@ -6,3 +6,4 @@
 
  [create the custom ansible.cfg and Inventory in seperate folder](https://github.com/vijayendrar/devsecops/tree/main/Ansible/folder.md)
 
+ [install vim and configure .vimrc in home folder for yaml syntax](https://github.com/vijayendrar/devsecops/tree/main/Ansible/yaml.md)
