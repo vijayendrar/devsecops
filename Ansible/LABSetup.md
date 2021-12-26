@@ -10,4 +10,4 @@
 
 <h4>copy key to the manage node</h4>
 
-! [image](images/keytonode.gif)
+! [image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/keytonode.gif)
