@@ -10,3 +10,15 @@
 
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/syntax.gif)
+
+
+<h4> more complex and customize vimrc configuration </h4>
+
+  syntax on
+  filetype plugin indent on
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab et ai cuc
+  colorscheme murphy
+
+  highlight CursorColumn cterm=NONE ctermbg=magenta ctermfg=NONE guibg=NONE guifg=NONE
+
+  ![image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/vimrc.gif)
