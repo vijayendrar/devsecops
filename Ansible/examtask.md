@@ -12,6 +12,7 @@
   - Task 1.6  the location of roles used in playbooks is defined as
               /home/admin/ansible/roles       
     <h3>inventory file </h3>
+    
                 [dev]
                 node1.lab.example.com
                 [test]
