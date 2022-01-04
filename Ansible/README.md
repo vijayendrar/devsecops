@@ -9,7 +9,7 @@
 [install vim and configure .vimrc in home folder for yaml syntax](https://github.com/vijayendrar/devsecops/tree/main/Ansible/yaml.md)
 
 
-[<h1> RHCE Exam Tasks </h1>](https://github.com/vijayendrar/devsecops/tree/main/Ansible/examtask.md)
+[<h1> RHCE Exam Tasks </h1>](https://github.com/vijayendrar/devsecops/blob/main/Ansible/examtask.md)
 
 
 
