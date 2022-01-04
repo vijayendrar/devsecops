@@ -31,7 +31,8 @@
           inventory     =  /home/admin/ansible/inventory
           roles_path    =  /home/admin/ansible/role
 
- <h4>Task-2 Create and run an Ansible ad-hoc command </h4>
+ <h4>Task-2 Create and run an Ansible ad-hoc command</h4>
+
   - Task 2.1: As a system administrator, you will need to install software 
               on the managed nodes.
   - Task 2.2: Create a shell script called yum-pack.sh that runs an ansible
@@ -55,7 +56,7 @@
            GPG signature checking is enabled
            The GPG key URL is http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG-KEY-redhat-release 
            The repository is enabled
-           
+
 
            #!/bin/bash
            ansible all -m yum_repository -a 'file=BaseOs name=EX407 description=Ex407 baseurl=http://content.example.com/rhel8.0/x86_64/dvd/BaseOS/ gpgcheck=yes gpgkey=http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG-KEY-redhat-release enabled=yes'
