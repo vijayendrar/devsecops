@@ -1,4 +1,4 @@
- <h4> Task-1 Install and configure Ansible on the control-node control.realmX.example.com as follows </h4>
+ <h4>Task-1 Install and configure Ansible on the control-node control.realmX.example.com as follows </h4>
 
   - Task 1.1: node1.lab.example.com is a member of the dev host group
   - Task 1.2: node2.lab.example.com is a member of the test host group
@@ -11,7 +11,7 @@
               defined
   - Task 1.6  the location of roles used in playbooks is defined as
               /home/admin/ansible/roles       
-
+    <h3>inventory file </h3>
                 [dev]
                 node1.lab.example.com
                 [test]
@@ -25,7 +25,7 @@
                 prod
 
 
-     <h3>copy Ansible.cfg the ansible configuration from the /etc/ansible/ansible.cfg to respective path and perfom modification in the file</h3>
+    <h3>copy Ansible.cfg the ansible configuration from the /etc/ansible/ansible.cfg to respective path and perfom modification in the file</h3>
 
-          inventory      = /home/admin/ansible/inventory
+          inventory     =  /home/admin/ansible/inventory
           roles_path    =  /home/admin/ansible/role
