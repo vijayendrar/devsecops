@@ -30,3 +30,40 @@
 
           inventory     =  /home/admin/ansible/inventory
           roles_path    =  /home/admin/ansible/role
+
+ <h4>Task-2 Create and run an Ansible ad-hoc command </h4>
+  - Task 2.1: As a system administrator, you will need to install software 
+              on the managed nodes.
+  - Task 2.2: Create a shell script called yum-pack.sh that runs an ansible
+  - Task 2.3: ad-hoc command to create yum-repository on each of the
+              managed nodes as follows
+
+           <h3>BaseOS repo</h3>
+
+           The name of the repository is EX407
+           The description is Ex407 Description
+           The base URL is http://content.example.com/rhel8.0/x86_64/dvd/BaseOS/
+           GPG signature checking is enabled
+           The GPG key URL is http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG-KEY-redhat-release
+           The repository is enabled
+
+           <h3>AppStream repo</h3>
+
+           The name of the repository is EXX407
+           The description is Exx407 Description
+           The base URL is http://content.example.com/rhel8.0/x86_64/dvd/AppStream/
+           GPG signature checking is enabled
+           The GPG key URL is http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG-KEY-redhat-release 
+           The repository is enabled
+           
+
+           #!/bin/bash
+           ansible all -m yum_repository -a 'file=BaseOs name=EX407 description=Ex407 baseurl=http://content.example.com/rhel8.0/x86_64/dvd/BaseOS/ gpgcheck=yes gpgkey=http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG-KEY-redhat-release enabled=yes'
+           ansible all -m yum_repository -a 'file=AppStream name=EXX407 description=Exx407 baseurl=http://content.example.com/rhel8.0/x86_64/dvd/AppStream/ gpgcheck=yes gpgkey=http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG- KEY-redhat-release enabled=yes'
+
+
+
+
+
+
+
