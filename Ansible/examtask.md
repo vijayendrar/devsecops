@@ -114,8 +114,7 @@
     point ansible.cfg role parameter to 
     /usr/share/ansible/roles/rhelsystem-roles.timesync
 <!-- tsk -->
-    
-<!-- tsk -->    
+<!-- tsk -->
     ```yaml
 
         --- 
