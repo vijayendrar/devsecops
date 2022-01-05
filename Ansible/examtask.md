@@ -2,13 +2,13 @@
 
 - Task 1.1: node1.lab.example.com is a member of the dev host group
 - Task 1.2: node2.lab.example.com is a member of the test host group
-- Task 1.3: node3.lab.example.com & node4.realmX.example.com are  member of the prod host group 
+- Task 1.3: node3.lab.example.com & node4.realmX.example.com are  member of the prod host group
 - Task 1.4: node5.lab.example.com is a member of the balancers host group.prod group members be member of the webservers host group too
 - Task 1.5:  create a configuration file called ansible.cfg as follows
               the host inventory file /home/admin/ansible/inventory is
               defined
 - Task 1.6  the location of roles used in playbooks is defined as /home/admin/ansible/roles
-        
+
     <h3>inventory file </h3>
 
          [dev]
@@ -22,7 +22,6 @@
          node5.lab.example.com
          [webserver:children]
          prod
-
 
     <h3>copy Ansible.cfg the ansible configuration from the /etc/ansible/ansible.cfg to respective path and perfom modification in the file</h4>
 
@@ -59,13 +58,11 @@
         ansible all -m yum_repository -a 'file=BaseOs name=EX407 description=Ex407 baseurl=http://content.example.com/rhel8.0/x86_64/dvd/BaseOS/ gpgcheck=yes gpgkey=http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG-KEY-redhat-release enabled=yes'
         ansible all -m yum_repository -a 'file=AppStream name=EXX407 description=Exx407 baseurl=http://content.example.com/rhel8.0/x86_64/dvd/AppStream/ gpgcheck=yes gpgkey=http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG- KEY-redhat-release enabled=yes'
 
-
  <h4>Task-3 Create a playbook called packages.yml that:</h4>
 
 - Task 3.1: installs the php and mariadb packages on hosts in the dev, test, and prod host groups.
 - Task 3.2: installs the Development Tools package group on hosts in the dev host group.
 - Task 3.3: updates all packages to the latest version on hosts in the dev host group
-
 
     ```yaml
     
@@ -129,7 +126,6 @@
               timezone: 
                 name: "{{timezone}}"
 
-
 <h4> Task-5 Create a role called apache in /home/admin/ansible/roles with the following requirements:</h4>
 
 - Task 5.1  The httpd package is installed, enabled on boot, and started.
@@ -140,7 +136,7 @@
     Where HOSTNAME is the fqdn of the managed node and IPADDRESS is the IP-Address of the managed node. Create a playbook called httpd.yml that uses this role and the playbook runs on hosts in the webservers host group
 
     <h5>  step-1 create the directory for the role</h5>
- 
+
         mkdir -p  /home/admin/ansible/roles
 
     <h5> step-2 initiliaze the apache role skeleton </h5>
@@ -168,10 +164,15 @@
 
     <h5>Create the install yaml file vim apache/tasks/install.yml</h5>
 
-    <!-- tsk -->
+    
     ```yaml
         ---
-        - name: install {{ pkg }}
+        - name: install {{pkg}}
           yum:
-            name: "{{ pkg }}" 
-            state: latest 
+            name: "{{pkg}}" 
+            state: latest
+
+    
+
+
+  
