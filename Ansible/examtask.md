@@ -115,7 +115,8 @@
     /usr/share/ansible/roles/rhelsystem-roles.timesync
 <!-- tsk -->
 <!-- tsk -->
-    ```yaml
+
+```yaml
 
         --- 
         - name: Timesync role playbook
