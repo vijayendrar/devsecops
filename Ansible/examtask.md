@@ -135,7 +135,6 @@
                 name: "{{timezone}}"
 <!-- tsk -->
 
-
  <h4> Task-5 Create a role called apache in /home/admin/ansible/roles with the following requirements:</h4>
 
   - Task 5.1  The httpd package is installed, enabled on boot, and started.
@@ -155,7 +154,8 @@
 
  <h5> step-3 it will create the below structure </h5>
 
- ! [image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/skel.png)
+![image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/skel.png)
+
 
   
 
