@@ -133,7 +133,7 @@
             - name: set the timezone
               timezone: 
                 name: "{{timezone}}"
-<!-- tsk -->
+
 
  <h4> Task-5 Create a role called apache in /home/admin/ansible/roles with the following requirements:</h4>
 
