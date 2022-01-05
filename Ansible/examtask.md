@@ -237,8 +237,8 @@
 - Task 5.4 create the file /webdev/index.html with single-line of text the reads: Development
 - Task 5.5 it should be available on http://servera.lab.example.com/webdev/index.html 
 
-<!-- tsk -->
-```yaml
+    <!-- tsk -->
+    ```yaml
     ---
         - name : install the webserver 
           hosts: dev
