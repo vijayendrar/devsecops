@@ -383,14 +383,14 @@ NOTE: If a hardware item does not exist, the associated value should be set to N
               - src: SDB_SIZE
                 dest:  "{{ ansible_devices.sda.size }}"
     ```            
-<h4> Task-10 Modify file content ,/h4>
+<h4> Task-10 Modify file content </h4>
 
 - Task 10.1 Create a playbook called ‘/home/admin/ansible/modify.yml’ as follows:
-- The playbook runs on all inventory hosts
-- The playbook replaces the contents of ‘/etc/issue’ with a single line of text as follows:
-- On hosts in the dev host group, the line reads: “Development”
-- On hosts in the test host group, the line reads: “Test”
-- On hosts in the prod host group, the line reads: “Production”
+- Task 10.2 The playbook runs on all inventory hosts
+- Task 10.3 The playbook replaces the contents of ‘/etc/issue’ with a single line of text as follows:
+- Task 10.4 On hosts in the dev host group, the line reads: “Development”
+- Task 10.5 On hosts in the test host group, the line reads: “Test”
+-Task 10.6 On hosts in the prod host group, the line reads: “Production”
 
     ```yaml
 
