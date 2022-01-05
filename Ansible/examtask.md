@@ -72,5 +72,18 @@
   - Task 3.3: ad-hoc command to create yum-repository on each of the
               managed nodes as follows
 
+    '''
 
-    '''yaml
+
+
+
+
+
+
+
+
+
+
+
+
+    '''
