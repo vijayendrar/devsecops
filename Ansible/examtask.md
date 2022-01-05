@@ -141,11 +141,11 @@
 
     <h5>  step-1 create the directory for the role</h5>
  
-    mkdir -p  /home/admin/ansible/roles
+        mkdir -p  /home/admin/ansible/roles
 
     <h5> step-2 initiliaze the apache role skeleton </h5>
 
-    ansible-galaxy init apache
+        ansible-galaxy init apache
 
     <h5> step-3 it will create the below structure </h5>
 
