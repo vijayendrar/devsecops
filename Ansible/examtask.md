@@ -237,6 +237,67 @@
 - Task 5.4 create the file /webdev/index.html with single-line of text the reads: Development
 - Task 5.5 it should be available on http://servera.lab.example.com/webdev/index.html 
 
+<!-- tsk -->
+```yaml
+    ---
+        - name : install the webserver 
+          hosts: dev
+          tasks:
+
+            - name: Start service httpd service
+              service:
+              name: httpd
+              enabled: true
+              state: started
+
+            - name: enable firewall and add http rule
+                firewalld:
+                    service: http
+                    permanent: yes
+                    state: enabled
+
+            - name: directory for the symbolik link
+                file:
+                    path: /webdev
+                    state: directory
+                    group: apache
+                    mode: "2775"
+                    setype: httpd_sys_content_t
+
+            - name: Touch a file and create file
+                file:
+                    path: /webdev/index.html
+                    state: touch
+                    setype: httpd_sys_content_t
+
+            - name: configure the directory with ownserhship
+                file:
+                    path: /var/www/html/webdev
+                    state: directory
+                    mode: '2775'
+                    group: apache
+
+            - name: Add file with line
+                lineinfile:
+                    path: /webdev/index.html
+                    line: Development
+                    create: yes
+                    state: present
+
+        - name: Create a symbolic link
+          file:
+            src: /webdev/
+            dest: /var/www/html/webdev
+            state: link
+            force: yes
+
+        - name: service http restarted
+          service:
+            name: httpd
+            state: restarted
+```            
+
+
 
 
 
