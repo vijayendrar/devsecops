@@ -312,8 +312,38 @@
           ---
           - dev_pass: wakennym
           - mgr_pass: rocky
-           
+         
+<h4> task-8 Generate a hosts file</h4>
 
+- Task 8.1 Download an initial template file hosts.j2 from http://classroom.example.com/hosts.j2 to /home/admin/ansible/ Complete the template so that it can be used to generate a file with a line for each inventory host in the same format as /etc/myhosts 
+  
+        example: 172.25.250.9 workstation.lab.example.com workstation
+
+- Task 8.2 Create a playbook called gen_hosts.yml that uses this template to generate the file /etc/myhosts on hosts in the dev host group. When completed, the file /etc/hosts on hosts in the dev host group should have a line for each managed host:
+
+        127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+        ::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
+        172.25.250.10 serevra.lab.example.com servera
+
+    <!-- tsk -->
+    <h4>downloaded host.j2 file </h4>
+
+        127.0.0.1  localhost
+        {{ansible_default_ipv4.address}} {{ansible_fqdn}} {{ansible_hostname}}
+
+    <h4>gen_hosts.yml file</h4>
+    
+    ```yaml 
+        - name : template to generate the host file
+          hosts: dev
+          tasks:
+
+        - name: Template for the host file
+          template:
+            src: /template/hosts.j2
+            dest: /etc/myhosts
+    ```
+    
 
 
 
