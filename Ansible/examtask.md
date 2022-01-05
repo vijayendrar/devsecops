@@ -383,6 +383,40 @@ NOTE: If a hardware item does not exist, the associated value should be set to N
               - src: SDB_SIZE
                 dest:  "{{ ansible_devices.sda.size }}"
     ```            
+<h4> Task-10 Modify file content ,/h4>
+
+- Task 10.1 Create a playbook called ‘/home/admin/ansible/modify.yml’ as follows:
+- The playbook runs on all inventory hosts
+- The playbook replaces the contents of ‘/etc/issue’ with a single line of text as follows:
+- On hosts in the dev host group, the line reads: “Development”
+- On hosts in the test host group, the line reads: “Test”
+- On hosts in the prod host group, the line reads: “Production”
+
+    ```yaml
+
+      - name: copy content and modify it
+        hosts: all
+        tasks:
+
+      - name: Copy file to dev group
+        copy:
+          dest: /etc/issue
+          content: "Development"
+        when: inventory_hostname in groups ["dev"]
+
+      - name: Copy file to test group
+        copy:
+          dest: /etc/issue
+          content: "test"
+        when: inventory_hostname in groups ["test"]
+
+      - name: Copy file with owner and production group
+        copy:
+          dest: /etc/issue
+          content: "production"
+        when: inventory_hostname in groups ["production"]
+    ```    
+
 
 
 
