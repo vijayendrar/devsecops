@@ -89,15 +89,15 @@
         - name: install the package in dev
           hosts: dev 
           tasks:
-              - name: install the package 
-                  yum:
-                    name: "@Development Tools"
-                    state: latest
+            - name: install the package 
+                yum:
+                  name: "@Development Tools"
+                  state: latest
         - name: exclude kernel 
           hosts: dev
           tasks:
             - name: exculde the kernel 
-                 yum:
-                    name: "*"
-                    state: latest 
-                    exclude: kernel
+                yum:
+                  name: "*"
+                  state: latest 
+                  exclude: kernel
