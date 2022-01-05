@@ -151,6 +151,27 @@
 
     ![image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/skel.png)
 
+    <h5> create the file under apache/tasks/main.yml </h5>
 
-  
+        - include_tasks: install.yml 
+        - include_tasks: service.yml
+        - include_tasks: firewall.yml
+        - include_tasks: webpage.yml
 
+    <h5>Define the variable vim apache/vars/main.yml </h5>
+
+        pkg: httpd
+        srv: httpd
+        fw: http
+        webpage: /var/www/html/index.html
+        template: index.j2
+
+    <h5>Create the install yaml file vim apache/tasks/install.yml</h5>
+
+    <!-- tsk -->
+    ```yaml
+        ---
+        - name: install {{ pkg }}
+          yum:
+            name: "{{ pkg }}" 
+            state: latest 
