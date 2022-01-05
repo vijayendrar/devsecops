@@ -72,18 +72,32 @@
   - Task 3.3: ad-hoc command to create yum-repository on each of the
               managed nodes as follows
 
-    '''
 
-
-
-
-
-
-
-
-
-
-
-
-
-    '''
+    ```yaml
+    
+        ---
+        - name: install the package
+          hosts: dev,test,prod 
+          tasks:
+            - name: install the package 
+                yum:
+                  name: "{{item}}"
+                  state: latest
+                loop:
+                  - php
+                  - mariadb
+        - name: install the package in dev
+          hosts: dev 
+          tasks:
+              - name: install the package 
+                  yum:
+                    name: "@Development Tools"
+                    state: latest
+        - name: exclude kernel 
+          hosts: dev
+          tasks:
+            - name: exculde the kernel 
+                 yum:
+                    name: "*"
+                    state: latest 
+                    exclude: kernel
