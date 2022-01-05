@@ -163,7 +163,7 @@
         template: index.j2
 
     <h5>Create the install yaml file vim apache/tasks/install.yml</h5>
-
+    <!-- tsk -->
     
     ```yaml
         ---
@@ -171,8 +171,66 @@
           yum:
             name: "{{pkg}}" 
             state: latest
+    ```         
+    <h5>Create the service file vim apache/tasks/service.yml</h5>
 
-    
+    <!-- tsk -->
+    ```yaml
+        ---
+        - name: enable/start {{srv}}
+          service:
+            name: "{{srv}}" 
+            enabled: true 
+            state: started
+    ``` 
+    <h5> Enable the firewall and add the rules vim apache/tasks/firewall.yml</h5>
+
+    <!-- tsk -->
+    ```yaml
+        ---
+        - name : open {{fw}} on firewalld
+          firewalld:
+            service: "{{fw}}"
+            state: enabled
+            immediate: yes
+            permanent: true 
+    ```
+
+    <h5>Create the webpage template : vim apache/tasks/webpage.yml</h5>
+
+    <!-- tsk -->
+    ```yaml
+            - name: create {{webpage}}
+              template:
+                src: "{{template}}"
+                dest: "{{webpage}}"
+                notify: restart_httpd
+    ```
+    <h5>Restart the http service vim apache/handlers/main.yml</h5>
+
+    <!-- tsk -->
+    ```yaml
+            - name: restart_httpd
+              service:
+                name: "{{http_srv}}" 
+                state: restarted
+    ```
+    <h5> create the jinja2 file </h5>
+
+        Welcome to {{ansible_fqdn}} on {{ansible_default_ipv4.address}}
+
+    <h5>Create the httpd.yml file : vim httpd.yml</h5>
+
+    <!-- tsk -->
+    ```yaml
+        ---
+        - name:
+          hosts: webservers 
+          roles:
+            - apache
+    ```
 
 
-  
+
+
+
