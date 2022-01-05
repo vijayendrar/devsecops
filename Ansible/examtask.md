@@ -64,8 +64,13 @@
           ansible all -m yum_repository -a 'file=AppStream name=EXX407 description=Exx407 baseurl=http://content.example.com/rhel8.0/x86_64/dvd/AppStream/ gpgcheck=yes gpgkey=http://content.example.com/rhel8.0/x86_64/dvd/RPM-GPG- KEY-redhat-release enabled=yes'
 
 
+ <h4>Task-3 Create a playbook called packages.yml that:</h4>
+
+  - Task 3.1: As a system administrator, you will need to install software 
+              on the managed nodes.
+  - Task 3.2: Create a shell script called yum-pack.sh that runs an ansible
+  - Task 3.3: ad-hoc command to create yum-repository on each of the
+              managed nodes as follows
 
 
-
-
-
+    '''yaml
