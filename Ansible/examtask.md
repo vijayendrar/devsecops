@@ -116,7 +116,7 @@
 <!-- tsk -->
 <!-- tsk -->
 
-```yaml
+    ```yaml
 
         --- 
         - name: Timesync role playbook
@@ -133,3 +133,29 @@
             - name: set the timezone
               timezone: 
                 name: "{{timezone}}"
+
+
+
+ <h4> Task-5 Create a role called apache in /home/admin/ansible/roles with the following requirements:</h4>
+
+  - Task 5.1  The httpd package is installed, enabled on boot, and started.
+  - Task 5.2  the firewall is enabled and running with a rule to allow access to the web server
+  - Task 5.3 template file index.j2 is used to create the file ‘/var/www/html/index.html’ with the output :
+             Welcome to HOSTNAME on IPADDRESS
+  
+    Where HOSTNAME is the fqdn of the managed node and IPADDRESS is the IP-Address of the managed node. Create a playbook called httpd.yml that uses this role and the playbook runs on hosts in the webservers host group
+
+ <h5>  step-1 create the directory for the role</h5>
+ 
+    mkdir -p  /home/admin/ansible/roles
+
+ <h5> step-2 initiliaze the apache role skeleton </h5>
+
+    ansible-galaxy init apache
+
+ <h5> step-3 it will create the below structure </h5>
+
+ ! [image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/skel.png)
+
+  
+
