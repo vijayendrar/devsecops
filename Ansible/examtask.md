@@ -239,7 +239,7 @@
 
     <!-- tsk -->
     ```yaml
-    ---
+    
         - name : install the webserver 
           hosts: dev
           tasks:
@@ -284,18 +284,36 @@
                     create: yes
                     state: present
 
-        - name: Create a symbolic link
-          file:
-            src: /webdev/
-            dest: /var/www/html/webdev
-            state: link
-            force: yes
+            - name: Create a symbolic link
+                file:
+                    src: /webdev/
+                    dest: /var/www/html/webdev
+                    state: link
+                    force: yes
 
         - name: service http restarted
           service:
             name: httpd
             state: restarted
     ```          
+<h4>Task-7 Create an Ansible vault to store user passwords as follows: The name of the vault is vault.yml The vault contains two variables as follows:</h4>
+
+- Task-7.1 dev_pass with value wakennym
+- Task 7.2 mgr_pass with value rocky
+- Task 7.3 The password to encrypt and decrypt the vault is atenorth
+- Task 7.4 The password is stored in the file /home/admin/ansible/password.txt
+
+
+        Create passsword.txt with text atenorth 
+        Ansible-vault create valult.yml   --vault-password-file=password.txt
+
+    <!-- tsk -->
+         Then write below mention text in open file 
+          ---
+          - dev_pass: wakennym
+          - mgr_pass: rocky
+           
+
 
 
 
