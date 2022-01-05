@@ -313,7 +313,7 @@
           - dev_pass: wakennym
           - mgr_pass: rocky
          
-<h4> task-8 Generate a hosts file</h4>
+<h4> Task-8 Generate a hosts file</h4>
 
 - Task 8.1 Download an initial template file hosts.j2 from http://classroom.example.com/hosts.j2 to /home/admin/ansible/ Complete the template so that it can be used to generate a file with a line for each inventory host in the same format as /etc/myhosts 
   
@@ -343,7 +343,49 @@
             src: /template/hosts.j2
             dest: /etc/myhosts
     ```
-    
+<h4> Task-9 Create a playbook called hwreport.yml that produces an output file called /root/hwreport.txt on all managed nodes with the following information:</h4>
+
+- Task 9.1  Inventory host name 
+- Task 9.2  Total memory in MB -BIOS version
+- Task 9.3  Size of disk device vda
+- Task 9.4  Size of disk device vdb
+- Task 9.5  Each line of the output file contains a single key-value pair. 
+- Task 9.6 Your playbook should:
+Download the file ‘hwreport.empty’ from the URL ‘http://classroom.example.com/hwreport.empty’ and save it as ‘/root/hwreport.txt’ Modify with the correct values.
+NOTE: If a hardware item does not exist, the associated value should be set to NONE
+
+
+    ```yaml
+        - name: create the hardware report
+          hosts: all
+          tasks:
+
+        - name: Download foo.conf
+            get_url:
+                url: http://content.example.com/rhexam/rh294/materials/hwreport.empty
+                dest: /root/hwreport.txt
+
+        - name: replace the file paramete
+            replace:
+                path: /root/hwreport.txt
+                regexp: "{{ item.src }}"
+                replace: "{{ item.dest }}"
+
+            loop:
+              - src: INVENTORY_HOSTNAME
+                dest : "{{ ansible_hostname }}"
+              - src: BIOS_VERSION
+                dest : "{{ ansible_bios_version }}"
+              - src: TOTAL_MEMORY
+                dest : "{{ ansible_memtotal_mb}}"
+              - src: SDA_SIZE
+                dest : "{{ ansible_devices.sda.size }}"
+              - src: SDB_SIZE
+                dest:  "{{ ansible_devices.sda.size }}"
+    ```            
+
+
+
 
 
 
