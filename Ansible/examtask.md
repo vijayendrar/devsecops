@@ -101,3 +101,11 @@
                   name: "*"
                   state: latest 
                   exclude: kernel
+
+ <h4> Task-4 Install the RHEL system Role pacakage and create the playbook timesync.yml that </h4>
+
+  - Task 4.1 run over all managed nodes
+  - Task 4.2 use the timesync role
+  - Task 4.3 Configure the role to use the time server classroom.example.com in exam 192.168.10.254
+
+        
