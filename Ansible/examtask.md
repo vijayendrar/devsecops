@@ -229,6 +229,13 @@
           roles:
             - apache
     ```
+<h4>Task-6 Create a playbook called web.yml as follows:</h4>
+
+- Task 5.1 The playbook runs on managed nodes in the dev host group. Create the directory /webdev with the following requirements
+- Task 5.2 membership in the apache group
+- Task 5.3 regular permissions: owner=r+w   +execute, group=r+w+execute, other=r+execute s.p=set group-id -symbolically link /webdev to /var/www/html/webdev
+- Task 5.4 create the file /webdev/index.html with single-line of text the reads: Development
+- Task 5.5 it should be available on http://servera.lab.example.com/webdev/index.html 
 
 
 
