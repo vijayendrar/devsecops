@@ -107,26 +107,28 @@
   - Task 4.1 run over all managed nodes
   - Task 4.2 use the timesync role
   - Task 4.3 Configure the role to use the time server classroom.example.com in exam 192.168.10.254
+  
+  <h4>install ansible system role</h4>
 
- <h4> install timesync role </h4>
+    sudo yum install rhel-system-roles.noarch -y
+    point ansible.cfg role parameter to 
+    /usr/share/ansible/roles/rhelsystem-roles.timesync
 
-        sudo yum install rhel-system-roles.noarch -y
-        /usr/share/ansible/roles/rhelsystem-roles.timesync <<= point to these directory for ansible.cfg
     
     ```yaml
-    
-      - name: Timesync role playbook
-        hosts: all 
-        vars:   
+
+        --- 
+        - name: Timesync role playbook
+          hosts: all 
+          vars:   
             timesync_ntp_provider: chrony
             timesync_ntp_servers:
               - hostname: classroom.example.com
                 iburst: yes
             timezone: Asia/Kolkata 
-        roles:
-          - rhel-system-roles.timesync 
-        tasks:
-          - name: set the timezone
-            timezone: 
-                name:"{{timezone}}"
-                
+          roles:
+            - rhel-system-roles.timesync 
+          tasks:
+            - name: set the timezone
+              timezone: 
+                name: "{{timezone}}"
