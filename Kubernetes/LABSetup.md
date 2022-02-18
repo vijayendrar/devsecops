@@ -2,4 +2,5 @@
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Kubernetes/kubernetes.png)
 
-<h2> Download the K8s Folder and run Vagrant up Command from </h2>
+[Download the K8s Folder and run Vagrant up Command from cli](https://github.com/vijayendrar/devsecops/tree/main/Kubernetes/k8s)
+
