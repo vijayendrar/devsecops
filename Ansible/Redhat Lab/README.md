@@ -33,21 +33,21 @@
 - create directory and configure ansible.cfg and inventory file
   
 <h3> ansible.cfg </h3>
----
+
     [defaults]
     inventory=/lab/inventory
     remote_user = ansible
 
     [privilege_escalation]
     become = true
----    
+   
 
 <h3> inventory </h3>
----
+
     [all]
     node1
     node2
----
+
 
 <h3> verify the configuration </h3>
 
