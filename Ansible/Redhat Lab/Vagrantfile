@@ -1,0 +1,38 @@
+Vagrant.configure("2") do |config|
+  (1..2).each do |i|
+    config.vm.define "node#{i}" do |node|
+      node.vm.box = "vijayendrarathod/RHEL8-Node"      
+      node.vm.hostname = "node#{i}"
+      node.vm.network "private_network", ip: "192.168.50.10#{i}"
+      node.vm.provision "shell" , path: "node.sh"
+      node.vm.provider "virtualbox" do |vb|
+        vb.name = "node#{i}"
+        vb.memory = "512"
+      end
+    end
+  end  
+
+    config.vm.define "content" do |content|
+      content.vm.box = "vijayendrarathod/RHEL8-Control-Node"      
+      content.vm.hostname = "content"
+      content.vm.network "private_network", ip: "192.168.50.20"
+      content.vm.provision "shell" , path: "content.sh"
+      content.vm.provider "virtualbox" do |vb|
+        vb.name = "content"
+        vb.memory = "512"
+      end
+    end
+
+    config.vm.define "controller" do |controller|
+      config.ssh.insert_key = false
+      controller.vm.box = "vijayendrarathod/RHEL8-Control-Node"
+      controller.vm.hostname = "controller"
+      controller.vm.network "private_network", ip: "192.168.50.10"
+      controller.vm.provision "one", type: "shell", path: "script.sh"   
+      controller.vm.provider "virtualbox" do |vb|
+        vb.name = "controller"
+        vb.memory = "512"    
+        vb.gui = true  
+      end
+    end
+end
