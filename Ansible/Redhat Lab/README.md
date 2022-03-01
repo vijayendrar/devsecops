@@ -9,7 +9,10 @@
 
 <h3> system Architecture flow </h3>
 
-  
+![image](https://github.com/vijayendrar/devsecops/blob/main/Ansible/images/ansible%20lab.png)  
+
+<h3> change the vagrantfile paramter to adjust node count  </h3>
+
   
 
 
