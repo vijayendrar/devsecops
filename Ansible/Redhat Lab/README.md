@@ -33,19 +33,21 @@
 - create directory and configure ansible.cfg and inventory file
   
 <h3> ansible.cfg </h3>
+---
+    [defaults]
+    inventory=/lab/inventory
+    remote_user = ansible
 
-[defaults]
-inventory=/lab/inventory
-remote_user = ansible
-
-[privilege_escalation]
-become = true
+    [privilege_escalation]
+    become = true
+---    
 
 <h3> inventory </h3>
-
-[all]
-node1
-node2
+---
+    [all]
+    node1
+    node2
+---
 
 <h3> verify the configuration </h3>
 
@@ -57,7 +59,10 @@ ansible all -m ping
 
  ```bash
 
-#!/bin/bash
-ansible all -m  yum_repository -a  'name="RHEL8_BASEOS" description=" BaseOS Repo for RHEL 8"  baseurl="http://content.example.com/rhel8.0/x86_64/dvd/BaseOS" enabled=yes gpgcheck=no'
+    #!/bin/bash
+    ansible all -m  yum_repository -a  'name="RHEL8_BASEOS" description=" BaseOS Repo for RHEL 8"  baseurl="http://content.example.com/rhel8.0/x86_64/dvd/BaseOS" enabled=yes gpgcheck=no'
 
-ansible all -m  yum_repository -a  'name="RHEL8_APPSTREAM" description="AppStream Repo for RHEL 8"  baseurl=" http://content.example.com/rhel8.0/x86_64/dvd/AppStream" enabled=yes gpgcheck=no
+    ansible all -m  yum_repository -a  'name="RHEL8_APPSTREAM" description="AppStream Repo for RHEL 8"  baseurl=" http://content.example.com/rhel8.0/x86_64/dvd/AppStream" enabled=yes gpgcheck=no
+
+
+
