@@ -1,6 +1,6 @@
 variable "accesstoken" {
     type = string
-    default = "f561dad0b89de15587af621e201d9c883e1bffd06d8c3d59bb6920cb39fee9ca"
+    default = " "
 }
 
 variable "machinename" {
