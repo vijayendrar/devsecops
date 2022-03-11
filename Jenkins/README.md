@@ -6,4 +6,4 @@
 - maximum 4GB RAM 50GB harddrive space 
 - default port 8080 [default port can be modified]
 
-[Jenkins lab with 1 master 2 Node](https://github.com/vijayendrar/devsecops/tree/main/Ansible/folder.md)
+[Jenkins lab with 1 master 2 Node](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-Vagrant-lab)
