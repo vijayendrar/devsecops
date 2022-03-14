@@ -10,6 +10,6 @@ wget https://www.oracle.com/in/java/technologies/javase/javase9-archive-download
 
 - tar zxvf jdk-9.0.4_linux-x64_bin.tar.gz
 - move the extracted folder /opt/java/jdk-9.0.4/
---
+
 
 
