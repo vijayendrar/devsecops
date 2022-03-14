@@ -7,3 +7,5 @@
 - default port 8080 [default port can be modified]
 
 [Jenkins lab with 1 master 2 Node](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-Vagrant-lab)
+
+[Deploy war file on jenkins node using artifacts](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-Vagrant-lab)
