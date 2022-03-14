@@ -33,10 +33,6 @@ NOTE: configure in /etc/profile to make it permanent
 
 :three: install and configure maven 
 
-
-
-:four: install and configure tomacat from binary:
-
 - wget https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
 - tar zxvf apache-maven-3.8.5-bin.tar.gz
 - mv  apache-maven-3.8.5 /opt/maven/
@@ -49,12 +45,61 @@ NOTE: configure in /etc/profile to make it permanent
     export PATH=${M2_HOME}/bin:${PATH}
 ---
 
-<h3> Verify the version </h3>
+<h3>verify version </h3>
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/version.PNG)
 
+:four: install and configure tomcat from binary:
+
+- wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.59/bin/apache-tomcat-9.0.59.tar.gz
+- tar zxvf apache-tomcat-9.0.59.tar.gz -C  /opt/tomcat --strip-components=1
+- sudo chown -R tomcat:tomcat /opt/tomcat/
+- sudo nano /etc/systemd/system/tomcat.service
+
+---
+    [Unit]
+    Description=Tomcat
+    After=network.target
+
+    [Service]
+    Type=forking
+
+    User=tomcat
+    Group=tomcat
+
+    Environment="JAVA_HOME=/usr"
+    Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+    Environment="CATALINA_BASE=/opt/tomcat"
+    Environment="CATALINA_HOME=/opt/tomcat"
+    Environment="CATALINA_PID=/opt/tomcat/temp/tomcat.pid"
+    Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+    ExecStart=/opt/tomcat/bin/startup.sh
+    ExecStop=/opt/tomcat/bin/shutdown.sh
+---
+
+- systemctl daemon-reload 
+- systemctl enable tomcat.service
+- systemctl start tomcat.service
+- sudo vim /opt/tomcat/conf/tomcat-users.xml
+
+```xml
 
 
- 
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <user username="tomcat" password="Root@123" roles="manager-gui,manager-script"/>
 
+```  
+- comment out text in /opt/tomcat/webapps/manager/META-INF/context.xml
 
+```xml 
+
+<!-->
+ <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+ allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+
+```
+- systemctl restart tomcat.service
+  
