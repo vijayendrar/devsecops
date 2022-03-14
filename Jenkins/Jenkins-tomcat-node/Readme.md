@@ -51,6 +51,8 @@ NOTE: configure in /etc/profile to make it permanent
 
 <h3> Verify the version </h3>
 
+![image][https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/version.PNG]
+
 
 
  
