@@ -8,4 +8,4 @@
 
 [Jenkins lab with 1 master 2 Node](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-Vagrant-lab)
 
-[Deploy war file on jenkins node using artifacts](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-Vagrant-lab)
+[Deploy war file on jenkins node using artifacts](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-tomcat-node)
