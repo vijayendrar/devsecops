@@ -12,7 +12,7 @@ wget https://www.oracle.com/in/java/technologies/javase/javase9-archive-download
 - move the extracted folder /opt/java/jdk-9.0.4/
 - configure java using below mention command 
 
-# Run the command from /opt/java/jdk-9.0.4/ #
+<h3>Run the command from /opt/java/jdk-9.0.4/ </h3>
 
 - update-alternatives --install /usr/bin/java java /opt/java/jdk-9.0.4/bin/java 100
 - update-alternatives --config java
@@ -23,7 +23,7 @@ wget https://www.oracle.com/in/java/technologies/javase/javase9-archive-download
 - update-alternatives --install /usr/bin/jar jar /opt/java/jdk-9.0.4/bin/jar 100
 - update-alternatives --config jar
 
-# setup java environment variable #
+<h3> setup java environment variable </h3>
 
 - export JAVA_HOME=/opt/java/jdk-9.0.4/
 - export JRE_HOME=/opt/java/jdk-9.0.4/jre
@@ -41,12 +41,16 @@ NOTE: configure in /etc/profile to make it permanent
 - tar zxvf apache-maven-3.8.5-bin.tar.gz
 - mv  apache-maven-3.8.5 /opt/maven/
 - nano /etc/profile.d/apachemaven.sh
-
+  
+---
     export JAVA_HOME=/opt/java/jdk-9.0.4/bin/java
     export M2_HOME=/opt/apache-maven-3.8.5
     export MAVEN_HOME=/opt/apache-maven-3.8.5
     export PATH=${M2_HOME}/bin:${PATH}
-    
+---
+
+
+
  
 
 
