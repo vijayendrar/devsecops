@@ -49,6 +49,8 @@ NOTE: configure in /etc/profile to make it permanent
     export PATH=${M2_HOME}/bin:${PATH}
 ---
 
+<h3> Verify the version </h3>
+
 
 
  
