@@ -116,7 +116,7 @@ NOTE: configure in /etc/profile to make it permanent
 
 <h3>deploy artifacts to  tomact server node ,which is slave node in our case</h3>
 
-![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/nodeapp.jpg)
+![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/deploy.jpg)
 
 Note: username is tomcat and Password is Root@123 which is earlier configure in tomcat 
 
