@@ -105,7 +105,7 @@ NOTE: configure in /etc/profile to make it permanent
 
 <h2>2.configuration on the master node </h2>
 
-<h3> create freestyle job with below mention configuration </h3>
+<h3>2.1 create freestyle job with below mention configuration </h3>
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/packageapp.jpg)
 
@@ -114,13 +114,13 @@ NOTE: configure in /etc/profile to make it permanent
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/artifacts.jpg)
 
 
-<h3>deploy artifacts to  tomact server node ,which is slave node in our case</h3>
+<h3>2.2 deploy artifacts to  tomact server node ,which is slave node in our case</h3>
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/deploy.jpg)
 
 Note: username is tomcat and Password is Root@123 which is earlier configure in tomcat 
 
-<h3>check the webpage after deployment</h3>
+<h3>2.3 check the webpage after deployment</h3>
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/nodeapp.jpg)
   
