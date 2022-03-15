@@ -111,5 +111,5 @@ NOTE: configure in /etc/profile to make it permanent
 
 :one: once you click on build now then it will create the artifacts
 
-![!image](https://../../images/artifacts.jpg)
+![image](https://../../images/artifacts.jpg)
   
