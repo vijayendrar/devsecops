@@ -1,3 +1,8 @@
+<h2> Jenkins Architecture </h2>
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/Architecture.jpg)
+
+
 <h2>1.Deploy War file to jenkins Slave node</h2>
 
 <h3> Node requirements </h3>
