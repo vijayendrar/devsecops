@@ -107,9 +107,9 @@ NOTE: configure in /etc/profile to make it permanent
 
 <h3> create freestyle job with below mention configuration </h3>
 
-[!image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/packageapp.jpg)
+![image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/packageapp.jpg)
 
 :one: once you click on build now then it will create the artifacts
 
-[!image](https://../../images/artifacts.jpg)
+![!image](https://../../images/artifacts.jpg)
   
