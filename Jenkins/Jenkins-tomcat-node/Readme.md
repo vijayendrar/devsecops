@@ -2,9 +2,9 @@
 
 <h3> Node requirements </h3>
 
-:one: Download and Install the jdk binary file
+:one: Download and Install the jdk binary file for linux
 
-wget https://www.oracle.com/in/java/technologies/javase/javase9-archive-downloads.html#license-lightbox
+https://www.oracle.com/in/java/technologies/javase/javase9-archive-downloads.html#license-lightbox
 
 :two: copy to the linux machine and extract it
 
@@ -102,4 +102,14 @@ NOTE: configure in /etc/profile to make it permanent
 
 ```
 - systemctl restart tomcat.service
+
+<h2>configuration on the master node </h2>
+
+<h3> create freestyle job with below mention configuration </h3>
+
+[!image](https://github.com/vijayendrar/devsecops/blob/main/Jenkins/images/packageapp.jpg)
+
+:one: once you click on build now then it will create the artifacts
+
+[!image](https://../../images/artifacts.jpg)
   
