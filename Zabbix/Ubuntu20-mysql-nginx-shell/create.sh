@@ -16,8 +16,8 @@ EOF"
 sudo sh -c "mysql -u root < /tmp/mysql.sql"
 sudo zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | sudo mysql -h localhost -uzabbix -pzabbix zabbix
 sudo sed -i 's/# DBPassword=/DBPassword=zabbix/g' /etc/zabbix/zabbix_server.conf
-sudo sed -i 's/# listen          80;/listen          80;/g' /etc/zabbix/nginx.conf
-sudo sed -i 's/# server_name    example.com;/server_name    192.168.50.50;/g' /etc/zabbix/nginx.conf
+sudo sed -i 's/#        listen          80;/        listen          80;/g' /etc/zabbix/nginx.conf
+sudo sed -i 's/#        server_name     example.com;/        server_name     192.168.50.50;/g' /etc/zabbix/nginx.conf
 sudo systemctl restart zabbix-server zabbix-agent nginx php7.4-fpm
 sudo systemctl enable zabbix-server zabbix-agent nginx php7.4-fpm
 
