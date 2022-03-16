@@ -1,4 +1,4 @@
-<h3> zabix installation using Ubuntu+Apache+mysql+shell scripts </h3>
+<h3> zabix installation using shell scripts </h3>
 
 :one: Pre-requisite
 - install virtualbox and vagrant into your machine
