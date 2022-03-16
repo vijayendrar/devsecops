@@ -4,9 +4,9 @@
 - install virtualbox and vagrant into your machine
 - setup hostonly adapter in virtualbox with static ip 
 
-![image]   
+![image](https://github.com/vijayendrar/devsecops/blob/main/Zabbix/images/virtual.PNG)
 
-Download file 
+Download file
 - create.sh
 - vagrantfile
 - then run Vagrant up 
