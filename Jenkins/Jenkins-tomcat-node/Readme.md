@@ -99,7 +99,6 @@ NOTE: configure in /etc/profile to make it permanent
 
 ``` xml
 
-
     <!-->
      <Valve className="org.apache.catalina.valves.RemoteAddrValve"
      allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
