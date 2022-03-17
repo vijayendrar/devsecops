@@ -1,9 +1,9 @@
-<h2> Jenkins task </h2>
+# Jenkins task #
 
-<h3>Hardware requirements</h3>
+## Hardware requirements ##
   
 - minimum 256 GB RAM 1GB harddrive space
-- maximum 4GB RAM 50GB harddrive space 
+- maximum 4GB RAM 50GB harddrive space
 - default port 8080 [default port can be modified]
 
 :arrow_right:[Jenkins lab with 1 master 2 Node](https://github.com/vijayendrar/devsecops/tree/main/Jenkins/Jenkins-Vagrant-lab)

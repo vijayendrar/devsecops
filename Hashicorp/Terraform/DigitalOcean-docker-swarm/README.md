@@ -1,8 +1,8 @@
-<h3> Download file and place into one folder </h3>
+# Download file and place into one folder #
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Terraform/images/docker%20cluster.jpg)
 
-<h3>enter the digitaloceantoken in variable.tf according to your account </h3>
+## enter the digitaloceantoken in variable.tf according to your account ##
 
 ```hcl
 
@@ -13,7 +13,7 @@ variable "accesstoken" {
 
 ```
 
-<h3> set the private key in variable.tf according to file location in your system </h3>
+## set the private key in variable.tf according to file location in your system ##
 
 ```hcl
 
@@ -24,7 +24,7 @@ variable "privatekey" {
 
 ```
 
-<h3>set the publickey in main.tf according to your environment </h4>
+## set the publickey in main.tf according to your environment ##
 
 ```hcl
 

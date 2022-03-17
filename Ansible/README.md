@@ -1,4 +1,4 @@
-<h3>Learn Ansible</h3> 
+# Learn Ansible #
 
 [setup the Ansible lab Environment](https://github.com/vijayendrar/devsecops/tree/main/Ansible/LABSetup.md)
 
@@ -8,10 +8,4 @@
 
 [install vim and configure .vimrc in home folder for yaml syntax](https://github.com/vijayendrar/devsecops/tree/main/Ansible/yaml.md)
 
-
-[<h1> RHCE Exam Tasks </h1>](https://github.com/vijayendrar/devsecops/blob/main/Ansible/examtask.md)
-
-
-
-
-            
+[RHCE Exam Tasks](https://github.com/vijayendrar/devsecops/blob/main/Ansible/examtask.md)
