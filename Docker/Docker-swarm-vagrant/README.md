@@ -3,7 +3,9 @@
 - vagrantfile
 - manager.sh
 - worker.sh
-  
+- install **vagrant plugin install vagrant-vbguest**.
+it will install virtual box guest additons
+
 ## port forwarding configured under vagrant manager node ##
 
 - port 3000:80
