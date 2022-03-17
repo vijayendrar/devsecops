@@ -1,4 +1,4 @@
-<h2>Zabbix Installation</h2>
+# Zabbix Installation
 
 :one:[Install Zabbix Ubuntu20-mysql-nginx-shell](https://github.com/vijayendrar/devsecops/tree/main/Zabbix/Ubuntu20-mysql-nginx-shell)
 

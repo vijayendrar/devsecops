@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 sudo apt-get update 
 sudo apt-get install -y \
     ca-certificates \
@@ -16,7 +16,8 @@ sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io 
 sudo systemctl enable docker.service 
 sudo systemctl start docker.service
-
+sudo usermod -aG docker vagrant
+sudo systemctl daemon-reload
 # configure firewall for docker ports #
 yes | ufw enable
 
@@ -29,3 +30,6 @@ ufw allow 4789/udp
 ufw allow 8080/tcp
 
 ufw reload 
+
+sudo docker swarm init --listen-addr 192.168.50.10:2377 --advertise-addr 192.168.50.10:2377
+sudo sh -c 'docker swarm join-token --quiet worker > /vagrant/worker_token'
