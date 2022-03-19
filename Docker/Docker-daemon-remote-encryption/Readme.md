@@ -46,7 +46,7 @@ note: Run command with necessary priveledges if not work in your environment
 ## copy below mention file to your client machine ##
 
 - ca.pem
-- server-cert.pem
+- cert.pem
 - key.pem
 - place all the key into .docker folder in client system
 - install docker desktop for windows in your system
