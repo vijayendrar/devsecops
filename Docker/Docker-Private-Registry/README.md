@@ -37,5 +37,4 @@ CMD ["nginx", "-g", "daemon off;"]
 
 5.Now push the image to local registry docker push 192.168.50.10:5000/my-nginx
 
-![image]()
-
+![image](https://github.com/vijayendrar/devsecops/blob/main/Docker/Images/push.png)
