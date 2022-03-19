@@ -36,3 +36,5 @@
     192.168.50.102  web3
 
 ---
+
+[docker private registry configuration](https://github.com/vijayendrar/devsecops/tree/main/Docker/Docker-Private-Registry)
