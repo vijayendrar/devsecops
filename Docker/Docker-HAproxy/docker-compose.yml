@@ -1,0 +1,52 @@
+version: "3.9"
+services:  
+        
+  nginx1:
+    image: 192.168.50.10:5000/my-nginx
+    hostname: manager    
+    ports:
+      - "3000:80"                                   
+    deploy:
+      replicas: 1      
+      placement:        
+        constraints:
+          - "node.role==manager"
+    configs:
+      - source: my_config1
+        target: /usr/share/nginx/html/index.html      
+            
+  nginx2:
+    image: 192.168.50.10:5000/my-nginx
+    hostname: worker1
+    ports:
+      - "3001:80"                                   
+    deploy:
+      replicas: 1      
+      placement:        
+        constraints:
+          - "node.role==worker"
+    configs:
+      - source: my_web2
+        target: /usr/share/nginx/html/index.html       
+
+  nginx3:
+    image: 192.168.50.10:5000/my-nginx
+    hostname: worker2
+    ports:
+      - "3002:80"                                   
+    deploy:
+      replicas: 1      
+      placement:        
+        constraints:
+          - "node.role==worker" 
+    configs:
+      - source: my_web-3
+        target: /usr/share/nginx/html/index.html 
+
+configs:                    
+    my_config1:
+      file: ./web1/index.html    
+    my_web2: 
+      file: ./web2/index.html
+    my_web-3:
+      file: ./web3/index.html  
