@@ -74,4 +74,6 @@ note: Run command with necessary priveledges if not work in your environment
 - set DOCKER_TLS_VERIFY=1
 - set DOCKER_CERT_PATH=C:\Users\Administrator\.docker
 
-![image]()
+![image](https://github.com/vijayendrar/devsecops/blob/main/Docker/Images/daemon.drawio.png)
+
+- verify configuration using docker info command it will reflect remote info
