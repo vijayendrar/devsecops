@@ -72,3 +72,6 @@ note: Run command with necessary priveledges if not work in your environment
 
 - set DOCKER_HOST=tcp://192.168.50.10:2376 [change ip according to your environment]
 - set DOCKER_TLS_VERIFY=1
+- set DOCKER_CERT_PATH=C:\Users\Administrator\.docker
+
+![image]()
