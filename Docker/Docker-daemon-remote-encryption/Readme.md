@@ -10,7 +10,7 @@ note: Run command with necessary priveledges if not work in your environment
 - [x] openssl req -subj "/CN=docker.example.dom" -sha256 -new -key server-key.pem -out server.csr
 - [x] echo subjectAltName = DNS:docker.example.dom,IP:192.168.0.246,IP:127.0.0.1 >> extfile.cnf [type youre ip address of docker server]
 - [x] echo extendedKeyUsage = serverAuth >> extfile.cnf
-- [x] openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem \
+- [x] openssl x509 -req -days 365 -sha256 -in server.csr -CA ca.pem -CAkey ca-key.pem  \
      -CAcreateserial -out server-cert.pem -extfile extfile.cnf
 
 ## create the client directory and run below mention command on the same server ##
