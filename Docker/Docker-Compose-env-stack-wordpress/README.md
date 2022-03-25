@@ -8,7 +8,7 @@
 
 - configure your virtualbox to host networking
 
-! [image] (<https://github.com/vijayendrar/devsecops/blob/main/Docker/Images/Host%20Networking.jpg>)
+![image](<https://github.com/vijayendrar/devsecops/blob/main/Docker/Images/Host%20Networking.jpg>)
 
 - download and install the vagragnt and virtual box
 - install the vagrant plugin install vagrant-vbguest
