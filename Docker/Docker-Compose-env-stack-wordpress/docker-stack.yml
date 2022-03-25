@@ -1,0 +1,78 @@
+version: "3.9"
+services:    
+
+  mysqldb1:
+    image: mysql:8.0.28-debian
+    volumes:           
+      - my-vol1:/var/lib/mysql
+    networks:
+     - mynet1  
+    env_file: ./my_env_mysqldb1.env      
+    deploy:
+      placement:      
+        constraints:
+          - "node.role==worker"
+      replicas: 1 
+      restart_policy:
+        condition: on-failure
+
+  mysqldb2:
+    image: mysql:8.0.28-debian
+    volumes:           
+      - my-vol2:/var/lib/mysql
+    networks:
+     - mynet1  
+    env_file: ./my_env_mysqldb2.env
+    deploy:
+      placement:      
+        constraints:
+          - "node.role==worker"
+      replicas: 1 
+      restart_policy:
+        condition: on-failure
+
+  wordpress1:
+    depends_on:
+      - mysqldb1
+    image: wordpress:5.9.2-apache    
+    volumes:
+     - word-vol1:/var/www/html
+    networks:
+     - mynet1
+    ports:
+     - "80:80"
+    env_file: ./my_env_wordpress1.env      
+    deploy:
+      placement:      
+        constraints:
+          - "node.role==worker"
+      replicas: 1     
+
+
+  wordpress2:
+    depends_on:
+      - mysqldb2
+    image: wordpress:5.9.2-apache    
+    volumes:
+     - word-vol2:/var/www/html
+    networks:
+     - mynet1
+    ports:
+     - "81:80"
+    env_file: ./my_env_wordpress2.env
+    deploy:
+      placement:      
+        constraints:
+          - "node.role==worker"
+      replicas: 1
+
+
+volumes:
+  my-vol1:
+  word-vol1:
+  my-vol2:
+  word-vol2: 
+
+networks:
+   mynet1:
+   
