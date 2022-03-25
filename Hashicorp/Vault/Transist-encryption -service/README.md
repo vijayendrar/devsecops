@@ -3,7 +3,9 @@
 ## configure your vault environment #
 
 step-1  vault secrets enable transit
+
 step-2  vault write -f transit/keys/my_app_key
+
 step-3  create the policy
 
 ```hcl
@@ -33,7 +35,7 @@ step-7 echo $APP_TOKEN  [ to display token ]
 
 step -1  git clone <https://github.com/hashicorp/vault-guides.git>
 
- Step -2  install the docker on the centos version 8
+Step -2  install the docker on the centos version 8
 
 ```cmd
 
@@ -79,4 +81,4 @@ step:9
 ```
 step:10 final output 
 
-![image]
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/encryption.png)
