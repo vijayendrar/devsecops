@@ -8,12 +8,10 @@
 
 - configure your virtualbox to host networking
 
-! [image] ()
-
+! [image] (<https://github.com/vijayendrar/devsecops/blob/main/Docker/Images/Host%20Networking.jpg>)
 
 - download and install the vagragnt and virtual box
 - install the vagrant plugin install vagrant-vbguest
-
 
 ## copy docker-stack.yml file to manager node along with all .env file ##
 
@@ -22,6 +20,6 @@
 
 ## test configuration using beleow mention url ##
 
-- http://192.168.50.101
-- http://192.168.50.102:81
+- <http://192.168.50.101>
+- <http://192.168.50.102:81>
   
