@@ -4,7 +4,7 @@
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Docker/Images/docker%20stack.png)
 
-## softare requirements ##
+## software requirements ##
 
 - configure your virtualbox to host networking
 
