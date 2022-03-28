@@ -2,9 +2,30 @@
 
 ## Transit Secret engine Architecuture ##
 
-![image]()
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/Page-2.png)
 
+## Trnsit engine configuration flow ##
 
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/Page-3.png)
+
+## install the vault on AWS Ubuntu Instance ##
+
+```cmd
+
+sudo apt-get update 
+sudo apt-get  install -y curl
+sudo apt install -y software-properties-common
+sudo apt-get update && apt-get install -y gnupg2
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install -y vault
+sudo apt-get install -y vim 
+sudo mkdir -p /vault/data 
+sudo chown -R vault:vault /vault/data
+
+```
+
+## create and Associcate ELastic iP to DNS name in Hosting console ##
 
 
 
