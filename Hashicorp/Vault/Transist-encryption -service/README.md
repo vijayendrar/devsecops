@@ -4,7 +4,7 @@
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/Page-2.png)
 
-## Trnsit engine configuration flow ##
+## Transit engine configuration flow ##
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/Page-3.png)
 
@@ -69,6 +69,15 @@ then run sudo systemctl enable --now vault.service
 Access the vault ui using <https://vaultserver01.devsecopsproject.in:8200>
 
 generate shamir secret and root key and unseal the vault
+
+
+## create security engineer policy ##
+
+![image]()
+
+
+
+
 
 ## enable transit secret engine and create Policy for security Engineer ##
 
