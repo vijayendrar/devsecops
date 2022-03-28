@@ -1,5 +1,14 @@
 # Transist secret engine #
 
+## Transit Secret engine Architecuture ##
+
+![image]()
+
+
+
+
+
+
 ## configure your vault environment #
 
 step-1  vault secrets enable transit
