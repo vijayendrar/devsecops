@@ -27,8 +27,70 @@ sudo chown -R vault:vault /vault/data
 
 ## create and Associcate ELastic iP to DNS name in Hosting console ##
 
-![image]()
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/domain%20map.jpg)
 
+map elastic ip address to your ubuntu instance
+
+## generate and map the certificate in vault domain ##
+
+:one:   install the certbot using sudo apt-get  install certbot
+:two:   sudo certbot certonly --standalone -d vaultserver01.devsecopsproject.in
+:three:  copy fullchain.pem and privkey.pem to  /etc/vault.d/
+:four:   Chanage the ownership using sudo chown -R vault:vault /etc/vault.d/
+:five:   give access right using  sudo chmod 755  /etc/vault.d/*.pem
+
+## configure the vault.hcl file  and start vault service ##
+
+```hcl
+
+ui = true
+
+storage "raft" {
+  path    = "/vault/data"
+}
+
+listener "tcp" {
+  address       = "172.31.89.157:8200"
+  tls_cert_file = "/etc/vault.d/fullchain.pem"
+  tls_key_file  = "/etc/vault.d/privkey.pem" 
+}
+
+api_addr = "https://172.31.89.157:8200"
+cluster_addr = "https://127.0.0.1:8201
+
+```
+
+then run sudo systemctl enable --now vault.service
+
+Access the vault ui using <https://vaultserver01.devsecopsproject.in:8200>
+
+generate shamir secret and root key and unseal the vault
+
+## enable transit secret engine and create Policy for security Engineer ##
+
+```hcl
+
+# Manage the transit secrets engine
+path "transit/keys/*" {
+  capabilities = [ "create", "read", "update", "delete", "list", "sudo" ]
+}
+
+# Enable the transit secrets engine
+path "sys/mounts/transit" {
+  capabilities = [ "create", "update" ]
+}
+
+# Write ACL policies
+path "sys/policies/acl/*" {
+  capabilities = [ "create", "read", "update", "delete", "list" ]
+}
+
+# Create tokens for verification & test
+path "auth/token/create" {
+  capabilities = [ "create", "update", "sudo" ]
+}
+
+```
 
 ## configure your vault environment #
 
@@ -109,6 +171,7 @@ step:9
     dotnet run
 
 ```
-step:10 final output 
+
+step:10 final output
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/encryption.png)
