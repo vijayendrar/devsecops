@@ -27,7 +27,7 @@ sudo chown -R vault:vault /vault/data
 
 ## create and Associcate ELastic iP to DNS name in Hosting console ##
 
-
+![image]()
 
 
 ## configure your vault environment #
