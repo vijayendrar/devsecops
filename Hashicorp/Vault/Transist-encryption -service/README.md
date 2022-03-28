@@ -70,20 +70,9 @@ Access the vault ui using <https://vaultserver01.devsecopsproject.in:8200>
 
 generate shamir secret and root key and unseal the vault
 
-
 ## create security engineer policy ##
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/policy%20craation.jpg)
-
-## attach policy to username/password auth ##
-
-![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/username.jpg)
-
-## login with username and password and copy security engineer token ##
-
-![image]()
-
-
 
 ## enable transit secret engine and create Policy for security Engineer ##
 
@@ -110,6 +99,25 @@ path "auth/token/create" {
 }
 
 ```
+
+## attach policy to username/password auth ##
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/username.jpg)
+
+## login with username and password and copy security engineer token ##
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/password.jpg)
+
+## copy token for security engineer #
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/tokencopy.jpg)
+
+
+## login with security engineer token  and generate token for app ##
+
+
+
+
 
 ## configure your vault environment #
 
