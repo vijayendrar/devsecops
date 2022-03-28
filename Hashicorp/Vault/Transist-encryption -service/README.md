@@ -25,7 +25,7 @@ sudo chown -R vault:vault /vault/data
 
 ```
 
-## create and Associcate ELastic iP to DNS name in Hosting console ##
+## create and Associate ELastic iP to DNS name in Hosting console ##
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/domain%20map.jpg)
 
@@ -128,6 +128,7 @@ path "transit/encrypt/my_app_key" {
 }
 
 ```
+
 ## login security engineer token using cli and create app policy token ##
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/token.jpg)
@@ -185,7 +186,7 @@ step:10 encryption with version 1
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/rotation.jpg)
 
-step:11  now rotate the key version  using vault ui 
+step:11  now rotate the key version  using vault ui
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/change%20version%20in%20vault%20for%20app%20.jpg)
 
