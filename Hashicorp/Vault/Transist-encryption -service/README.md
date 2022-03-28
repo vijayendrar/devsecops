@@ -34,9 +34,13 @@ map elastic ip address to your ubuntu instance
 ## generate and map the certificate in vault domain ##
 
 :one:   install the certbot using sudo apt-get  install certbot
+
 :two:   sudo certbot certonly --standalone -d vaultserver01.devsecopsproject.in
+
 :three:  copy fullchain.pem and privkey.pem to  /etc/vault.d/
+
 :four:   Chanage the ownership using sudo chown -R vault:vault /etc/vault.d/
+
 :five:   give access right using  sudo chmod 755  /etc/vault.d/*.pem
 
 ## configure the vault.hcl file  and start vault service ##
