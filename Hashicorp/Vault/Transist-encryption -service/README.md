@@ -181,6 +181,14 @@ step:9
 
 ```
 
-step:10 final output
+step:10 encryption with version 1
 
-![image]
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/rotation.jpg)
+
+step:11  now rotate the key version  using vault ui 
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/change%20version%20in%20vault%20for%20app%20.jpg)
+
+step:12 Verify the effects
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/rotation.jpg)
