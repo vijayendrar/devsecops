@@ -74,7 +74,7 @@ generate shamir secret and root key and unseal the vault
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/policy%20craation.jpg)
 
-## enable transit secret engine and create Policy for security Engineer ##
+## enable transit secret engine name mu_app_key and create Policy for security Engineer ##
 
 ```hcl
 
@@ -112,20 +112,7 @@ path "auth/token/create" {
 
 ![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/tokencopy.jpg)
 
-
-## login with security engineer token  and generate token for app ##
-
-
-
-
-
-## configure your vault environment #
-
-step-1  vault secrets enable transit
-
-step-2  vault write -f transit/keys/my_app_key
-
-step-3  create the policy
+## login with security engineer from ui and create app policy ##
 
 ```hcl
 path "transit/keys/my_app_key" {
@@ -141,16 +128,11 @@ path "transit/encrypt/my_app_key" {
 }
 
 ```
+## login security engineer token using cli and create app policy token ##
 
-step-4 vault policy write rewrap_example ./rewrap_example.hcl
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/token.jpg)
 
-step-5 vault token create -policy=rewrap_example
-
-step-6 create another token  APP_TOKEN=$(vault token create -format=json -policy=rewrap_example | jq -r ".auth.client_token")
-
-step-7 echo $APP_TOKEN  [ to display token ]
-
-## perform step on application server ##
+## perform step on application server in our case it is centos machine ##
 
 step -1  git clone <https://github.com/hashicorp/vault-guides.git>
 
@@ -192,7 +174,7 @@ step:9
 ```hcl
 
     VAULT_TOKEN=s.iZW56SyrmO7agdce8aXIIlpS \
-    VAULT_ADDR=https://vault-01.examsimulator.net:8200 \
+    VAULT_ADDR=https://vaultserver01.devsecopsproject.in:8200 \
     VAULT_TRANSIT_KEY=my_app_key \
     SHOULD_SEED_USERS=true \
     dotnet run
@@ -201,4 +183,4 @@ step:9
 
 step:10 final output
 
-![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/encryption.png)
+![image]
