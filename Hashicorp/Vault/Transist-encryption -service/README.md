@@ -73,9 +73,15 @@ generate shamir secret and root key and unseal the vault
 
 ## create security engineer policy ##
 
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/policy%20craation.jpg)
+
+## attach policy to username/password auth ##
+
+![image](https://github.com/vijayendrar/devsecops/blob/main/Hashicorp/Vault/image/username.jpg)
+
+## login with username and password and copy security engineer token ##
+
 ![image]()
-
-
 
 
 
