@@ -1,0 +1,30 @@
+Vagrant.configure("2") do |config|
+    config.vm.define "vaultserver" do |vaultserver|
+        config.ssh.insert_key = false
+        vaultserver.vm.box="peru/ubuntu-20.04-server-amd64"
+        vaultserver.vm.hostname = "vaultserver"
+        vaultserver.vm.synced_folder ".", "/vagrant", type: "virtualbox"                 
+        vaultserver.vm.network "private_network", ip: "192.168.50.10"              
+        vaultserver.vm.provision "shell", path: "vaultserver.sh"
+        vaultserver.vm.provider "virtualbox" do |vb|
+            vb.name = "vaultserver"             
+            vb.gui = false
+            vb.memory = 2048
+        end
+    end
+    
+    (1..2).each do |i|
+        config.vm.define "vaulthost#{i}" do |vaulthost|
+          vaulthost.vm.box = "peru/ubuntu-20.04-server-amd64"      
+          vaulthost.vm.hostname = "vaulthost#{i}"
+          vaulthost.vm.synced_folder ".", "/vagrant", type: "virtualbox"  
+          vaulthost.vm.network "private_network", ip: "192.168.50.10#{i}"                       
+          vaulthost.vm.provider "virtualbox" do |vb|
+            vb.name = "vaulthost#{i}"
+            vb.cpus = "1"
+            vb.gui = false
+            vb.memory = "2048"
+          end
+        end
+    end
+end
