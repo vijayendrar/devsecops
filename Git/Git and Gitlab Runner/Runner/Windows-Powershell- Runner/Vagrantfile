@@ -1,0 +1,14 @@
+Vagrant.configure("2") do |config|
+    config.vm.define "gitlab" do | gitlabrunner |
+        config.ssh.insert_key = false
+        gitlabrunner.vm.box="baunegaard/win10pro-da"      
+        gitlabrunner.vm.synced_folder ".", "/vagrant", type: "virtualbox"                 
+        gitlabrunner.vm.network "private_network", ip: "192.168.50.10"              
+        gitlabrunner.vm.provision "shell", privileged: "true", powershell_elevated_interactive: "true", path: "PowershellScript.ps1"      
+        gitlabrunner.vm.provider "virtualbox" do |vb|
+            vb.name = "gitlabrunner"             
+            vb.gui = false
+            vb.memory = 4048
+        end
+    end 
+end
