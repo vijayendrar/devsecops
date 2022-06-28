@@ -3,7 +3,6 @@
     [Defaults]
     inventory= /package/inventory 
 
-
 <h4> Create the inventory file in the same directory </h4>
 
         [dev]

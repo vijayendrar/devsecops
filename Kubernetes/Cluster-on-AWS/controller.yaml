@@ -1,0 +1,106 @@
+---
+- hosts: ansible-controller
+  connection: local
+  become: True
+  tasks:
+    - name: create the useron Ansible on Controller Node
+      user:
+        name: ansible
+        comment: use for Ansible controller node
+        state: present
+        create_home: yes
+        shell: /bin/bash        
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: /home/ansible/.ssh/id_rsa
+
+    - name: Add Ansible user to sudoers groups
+      lineinfile:
+        path: /etc/sudoers.d/ansible
+        line: 'ansible ALL=(ALL) NOPASSWD:ALL'
+        state: present
+        mode: 0440
+        create: yes
+
+
+    - name: create directory for terraform 
+      file:
+        path: /home/ansible/terraform
+        state: directory
+        mode: 0755
+
+
+    - name: download the apt key
+      get_url:
+        url: https://apt.releases.hashicorp.com/gpg
+        dest: /tmp/apt.gpg    
+
+    - name: Install Apt Key from File
+      apt_key:        
+        file: /tmp/apt.gpg
+        state: present
+         
+    - name: add Repo for terraform
+      apt_repository:
+        repo: deb [arch=amd64] https://apt.releases.hashicorp.com bionic main
+        state: present
+        filename: terraform         
+        update_cache: true
+
+    - name: install terraform
+      apt:
+        name:
+        - terraform
+        - unzip
+        update_cache: true
+        state: latest
+
+
+    - name: download aws cli 
+      get_url:
+        url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: /tmp/awscliv2.zip
+
+    - name: create directory
+      file:
+        state: directory
+        path: /tmp/awscli
+        mode: 0755    
+
+    - name: unarchive zip file
+      unarchive:
+        src: /tmp/awscliv2.zip
+        dest: /tmp/awscli
+        mode: 0755
+        remote_src: True
+
+    - name: run command to install aws-cli
+      shell: |
+        cd /tmp/awscli || exit 0
+        ./aws/install
+        
+        exit 0
+
+    - name: copy .aws directory 
+      copy:
+        src: /vagrant/.aws
+        dest: /home/vagrant/  
+
+
+
+
+
+
+          
+
+
+
+
+       
+        
+
+
+
+
+
+      
